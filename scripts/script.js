@@ -24,7 +24,18 @@ items.forEach((itemText, index) => {
   li.appendChild(a);
 });
 let heroCard = document.querySelector(".hero__card");
-console.log(heroCard);
-// let heroImage = createEl("img", "hero__img");
-// console.log(heroImage);
-// heroCard.appendChild(heroImage);
+
+export class StarWarsApi {
+  constructor() {
+    this.baseUrl = "https://swapi.dev/api/";
+  }
+  async getPeoples() {
+    try {
+      const response = await axios.get(`${this.baseUrl}/people`);
+      console.log("test sort", response.data);
+      return response.data;
+    } catch (error) {
+      console.log(error, " happens when getting people");
+    }
+  }
+}
