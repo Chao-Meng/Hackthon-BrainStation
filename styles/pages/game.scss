@@ -1,0 +1,22 @@
+@use "./partials/mixin" as *;
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+.game {
+  &__planet {
+    width: 30%;
+    border-radius: 13rem;
+    // animation: rotate 5s linear infinite;
+    transform: translate(0%, 0%);
+  }
+  &:hover {
+    transform: rotate(45deg);
+    width: 100%;
+  }
+}

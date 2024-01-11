@@ -1,0 +1,8 @@
+.game__planet {
+  width: 30%;
+  border-radius: 13rem;
+}
+.game__planet .rotate-image {
+  -webkit-animation: rotate 5s linear infinite;
+          animation: rotate 5s linear infinite;
+}/*# sourceMappingURL=game.css.map */
