@@ -14,17 +14,18 @@
     </header>
     <main>
       <section class="game">
-        <div id="quiz-container">
-          <div class="question">
-            <p>你最喜欢的活动是什么？</p>
-            <button class="answer" data-character="Luke">探险和旅行</button>
-            <button class="answer" data-character="Yoda">学习和研究</button>
-            <button class="answer" data-character="Vader">指挥和领导</button>
-            <button class="answer" data-character="Han">修理和创造东西</button>
-          </div>
-          <button id="submit-quiz">提交答案</button>
-          <div id="result"></div>
-        </div>
+        <form id="myForm">
+          <p>Please choose from "Travel, Study, Lead, Create"</p>
+          <label for="name"
+            >Name: <input type="text" id="name" name="name" required
+          /></label>
+          <br />
+          <label for="answer">Answer:</label>
+          <input type="text" id="answer" name="answer" />
+          <br />
+          <button type="submit">Submit</button>
+        </form>
+        <div id="result"></div>
       </section>
     </main>
     <script
