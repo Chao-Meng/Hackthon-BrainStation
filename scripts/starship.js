@@ -1,30 +1,22 @@
 import createEl, { StarWarsApi } from "./script.js";
-// const names = [
-//   "Luke_skywalker",
-//   "C-3PO",
-//   "R2-D2",
-//   "Darth Vade",
-//   "Leia Organa",
-//   "Owen Lars",
-//   "Beru Whitesun Lars",
-//   "r5-d4",
-//   "Obi-Wan Kenobi",
-// ];
+
 const links = [
+  "../assets/images/CR90 corvette.png",
+  "../assets/images/Star Destroyer.png",
+  "../assets/images/Sentinel-class landing craft.png",
   "../assets/images/Death Star.png",
   "../assets/images/EF76 Nebulon-B escort frigate.png",
-  "../assets/images/Imperial shuttle.png",
-  "../assets/images/Rebel transport.png",
-  "../assets/images/Sentinel-class landing craft.png",
-  "../assets/images/Star Destroyer.png",
-  "../assets/images/TIE Advanced x1.png",
-  "../assets/images/X-wing.png",
+  "../assets/images/Millennium Falcon.png",
   "../assets/images/Y-wing.png",
+  "../assets/images/X-wing.png",
+  "../assets/images/TIE Advanced x1.png",
+  "../assets/images/Executor.png",
+  "../assets/images/Rebel transport.png",
 ];
 
 let album = document.querySelector(".album");
 let albumTitle = createEl("p", "album__title");
-albumTitle.textContent = "Roles Library";
+albumTitle.textContent = "Starships Library";
 console.log(albumTitle);
 album.appendChild(albumTitle);
 let albumContainer = createEl("div", "album__container");
@@ -33,12 +25,12 @@ album.appendChild(albumContainer);
 const api = new StarWarsApi();
 let currentCard = null;
 api.getStarships().then((response) => {
-  response.results.forEach((people, index) => {
-    if (people.name !== "CR90 corvette") {
+  response.results.forEach((starship, index) => {
+    if (starship.name !== "Rebel transport") {
       let containerSmall = createEl("div", "album__container--small");
       albumContainer.appendChild(containerSmall);
       let albumItem = createEl("img", "album__item");
-      albumItem.textContent = people.name;
+      albumItem.textContent = starship.name;
       albumItem.src = links[index];
       containerSmall.appendChild(albumItem);
       albumItem.addEventListener("click", (event) => {
@@ -50,20 +42,17 @@ api.getStarships().then((response) => {
         containerSmall.appendChild(albumCard);
         currentCard = albumCard;
         let albumName = createEl("p", "album__name");
-        albumName.textContent = `Name: ${people.name}`;
+        albumName.textContent = `Name: ${starship.name}`;
         albumCard.append(albumName);
-        let albumGender = createEl("p", "album__gender");
-        albumGender.textContent = `Gender: ${people.gender}`;
-        albumCard.append(albumGender);
-        let albumHeight = createEl("p", "album__height");
-        albumHeight.textContent = `Height: ${people.height}`;
-        albumCard.append(albumHeight);
-        let albumEyeColor = createEl("p", "album__eyeColor");
-        albumEyeColor.textContent = `Eye Color: ${people.eye_color}`;
-        albumCard.append(albumEyeColor);
-        let albumBirth = createEl("p", "album__birth");
-        albumBirth.textContent = `Birth Year: ${people.birth_year}`;
-        albumCard.append(albumBirth);
+        let albumModel = createEl("p", "album__model");
+        albumModel.textContent = `Model: ${starship.model}`;
+        albumCard.append(albumModel);
+        let albumCapacity = createEl("p", "album__capacity");
+        albumCapacity.textContent = `Capacity: ${starship.cargo_capacity}`;
+        albumCard.append(albumCapacity);
+        let albumLength = createEl("p", "album__passengers");
+        albumLength.textContent = `Length: ${starship.length}`;
+        albumCard.append(albumLength);
       });
     }
   });
