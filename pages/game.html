@@ -14,34 +14,72 @@
     </header>
     <main>
       <section class="game">
-        <form id="myForm">
-          <p>Please choose from "Travel, Study, Lead, Create"</p>
-          <label for="name"
-            >Name: <input type="text" id="name" name="name" required
-          /></label>
-          <br />
-          <label for="answer">Answer:</label>
-          <input type="text" id="answer" name="answer" />
-          <br />
-          <button type="submit">Submit</button>
-        </form>
-        <div id="result"></div>
+        <div class="game__form">
+          <form id="myForm">
+            <p>Please choose from "Travel, Study, Lead, Create"</p>
+            <div class="game__container">
+              <label class="game__label" for="name"
+                >Name:
+                <input
+                  class="game__input"
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+              /></label>
+            </div>
+            <br />
+            <div class="game__container">
+              <label class="game__label" for="answer">Answer:</label>
+              <input
+                class="game__input"
+                type="text"
+                id="answer"
+                name="answer"
+              />
+            </div>
+            <br />
+            <button class="game__button" type="submit">Submit</button>
+          </form>
+          <div id="result"></div>
+        </div>
       </section>
     </main>
+
+    <footer>
+      <div class="footer">
+        <section class="footer__container">
+          <h3 class="footer__title">Get in Touch</h3>
+          <div class="footer__social">
+            <div class="footer__container--small">
+              <a href="https://www.linkedin.com/in/chao-meng-93a970173/"
+                ><img
+                  class="footer__social--item"
+                  src="../assets/images/linkedin.jpg"
+                  alt="Linkedin"
+              /></a>
+              <p>Chao Meng</p>
+            </div>
+            <div class="footer__container--small">
+              <a href="https://www.linkedin.com/in/galina-grigoryan/"
+                ><img
+                  class="footer__social--item"
+                  src="../assets/images/linkedin.jpg"
+                  alt="Linkedin"
+              /></a>
+              <p>Galina Grigoryan</p>
+            </div>
+          </div>
+        </section>
+        <p class="footer__copyright">
+          © Copyright PixelPioneers Team.All rights reserved.
+        </p>
+      </div>
+    </footer>
     <script
       type="module"
       src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
     ></script>
     <script src="../scripts/game.js" type="module"></script>
   </body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>game</title>
-  </head>
-  <body></body>
 </html>

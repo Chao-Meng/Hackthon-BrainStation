@@ -9,14 +9,45 @@
 }
 .game {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  margin-left: auto;
+  padding: 2rem;
+  background-image: url("../../assets/images/Yavin\ IV.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  padding-top: 10%;
+  padding-bottom: 10%;
   &__planet {
-    width: 30%;
-    border-radius: 13rem;
+    width: 20%;
+    border-radius: 50%;
     animation: rotate 5s linear infinite;
   }
-  &:hover {
-    transform: rotate(45deg);
-    width: 100%;
+
+  &__lable {
+    display: block;
+    margin: 2rem;
   }
+  &__button {
+    background-color: #43464b;
+    width: 50%;
+    color: white;
+    padding: 0.5rem 0;
+    border-radius: 5%;
+    font-size: 1.5rem;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5rem;
+  }
+}
+#myForm {
+  font-size: 1.5rem;
+  color: white;
+}
+#result {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
 }

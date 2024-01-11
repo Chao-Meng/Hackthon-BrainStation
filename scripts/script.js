@@ -38,4 +38,13 @@ export class StarWarsApi {
       console.log(error, " happens when getting people");
     }
   }
+  async getStarships() {
+    try {
+      const response = await axios.get(`${this.baseUrl}/starships`);
+      console.log("test sort", response.data);
+      return response.data;
+    } catch (error) {
+      console.log(error, " happens when getting people");
+    }
+  }
 }

@@ -2,7 +2,7 @@ import createEl, { StarWarsApi } from "./script.js";
 let game = document.querySelector(".game");
 let planet = createEl("img", "game__planet");
 planet.src = "../assets/images/planet.png";
-game.appendChild(planet);
+game.prepend(planet);
 
 const answers = ["Luke", "Yoda", "Vader", "Han"];
 let buttonText = document.querySelector(".answer");

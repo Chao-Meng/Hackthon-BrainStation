@@ -1,0 +1,25 @@
+.album__title {
+  font-size: 3rem;
+}
+.album__container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.album__container--small {
+  width: 30%;
+  display: flex;
+  gap: 0;
+  flex-direction: column;
+}
+.album__item {
+  width: 100%;
+  cursor: pointer;
+}
+.album__card {
+  background-color: #43464b;
+  width: 100%;
+  color: white;
+  font-size: 2rem;
+}/*# sourceMappingURL=starship.css.map */
